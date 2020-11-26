@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 219306105}
   - component: {fileID: 219306104}
   - component: {fileID: 219306106}
+  - component: {fileID: 219306107}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -167,7 +168,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94698024, y: 0.6345718}
+  m_Size: {x: 0.9165113, y: 0.6345718}
   m_EdgeRadius: 0
 --- !u!50 &219306101
 Rigidbody2D:
@@ -228,7 +229,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6664195757074223314, guid: 6bd1c00f5f6ecc746b6e2277f8a7d292,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -281,7 +282,18 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 219306106}
+        m_MethodName: OnLand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -300,7 +312,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.09}
   serializedVersion: 2
-  m_Radius: 0.48140037
+  m_Radius: 0.48005727
 --- !u!114 &219306106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +326,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 219306104}
+  animator: {fileID: 219306107}
   runSpeed: 35
+--- !u!95 &219306107
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219306099}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ee235edaca00184cab7341beefdb5c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &296143259
 GameObject:
   m_ObjectHideFlags: 0
